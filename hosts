@@ -1,0 +1,8 @@
+[controller]
+controller
+
+[compute]
+compute-0[0:6]
+
+[compute:vars]
+ansible_ssh_private_key_file=/srv/ansible/ansible-key
