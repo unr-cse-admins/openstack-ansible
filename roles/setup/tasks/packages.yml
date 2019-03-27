@@ -1,6 +1,6 @@
 - name: Add apt repo
   apt_repository:
-    repo: cloud-archive:rocky
+    repo: 'deb http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/rocky main'
     state: present
 
 - name: Update cache
