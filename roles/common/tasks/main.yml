@@ -4,4 +4,4 @@
     state: present
     key: '{{ item }}'
   with_file:
-  - public_keys/ansible-key
+  - public_keys/ansible-key.pub
