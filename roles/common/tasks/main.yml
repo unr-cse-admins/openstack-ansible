@@ -1,7 +1,7 @@
 - name: Copy root's public key
-	authorized_key:
-		user: root
-		state: present
-		key: '{{ item }}'
-	with_file:
-	- public_keys/ansible-key
+  authorized_key:
+    user: root
+    state: present
+    key: '{{ item }}'
+  with_file:
+  - public_keys/ansible-key

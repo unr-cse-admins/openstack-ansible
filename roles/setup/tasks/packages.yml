@@ -1,16 +1,17 @@
 - name: Add apt repo
-	repo: cloud-archive:rocky
-	state: present
+  apt_repository:
+    repo: cloud-archive:rocky
+    state: present
 
 - name: Update cache
-	apt:
-		update_cache: yes
+  apt:
+   update_cache: yes
 
 - name: Install OpenStack packages
-  	apt:
-  		name: "{{ packages }}"
-  		state: present
-  		vars:
-  			packages:
-  			- software-properties-common
-  			- python-openstackclient
+  apt:
+    name: "{{ packages }}"
+    state: present
+    vars:
+      packages:
+      - software-properties-common
+      - python-openstackclient

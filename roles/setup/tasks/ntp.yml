@@ -11,12 +11,12 @@
 
 - name: Copy chrony.conf
 	copy:
-    	src: etc/chrony/chrony.conf
-    	dest: /etc/chrony/chrony.conf
-	    owner: root
-	    group: root
-	    mode: 0644
- 	register: chronyconf
+		src: etc/chrony/chrony.conf
+		dest: /etc/chrony/chrony.conf
+		owner: root
+		group: root
+		mode: 0644
+	register: chronyconf
 
 - name: Restart chrony service
 	systemd:
