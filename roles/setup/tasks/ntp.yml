@@ -1,25 +1,25 @@
 - name: Install chrony
-	apt:
-		name: chrony
-		update_cache: yes
+  apt:
+    name: chrony
+    update_cache: yes
 
 - name: Enabable chorny to start on boot
-	systemd:
-		name: chrony
-		enabled: yes
+  systemd:
+    name: chrony
+    enabled: yes
 
 
 - name: Copy chrony.conf
-	copy:
-		src: etc/chrony/chrony.conf
-		dest: /etc/chrony/chrony.conf
-		owner: root
-		group: root
-		mode: 0644
-	register: chronyconf
+  copy:
+    src: etc/chrony/chrony.conf
+    dest: /etc/chrony/chrony.conf
+    owner: root
+    group: root
+    mode: 0644
+  register: chronyconf
 
 - name: Restart chrony service
-	systemd:
-		name: chrony
-		state: restarted
-	when: chronyconf.changed
+  systemd:
+    name: chrony
+    state: restarted
+  when: chronyconf.changed
